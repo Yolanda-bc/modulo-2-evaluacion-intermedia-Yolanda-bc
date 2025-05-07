@@ -10,10 +10,12 @@ const resultGame = document.querySelector (".js_result")
 
 
 
-// Función para obtener un número aleatorio entre 1 y max
+// Función para obtener un número aleatorio 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
   }
+
+  
   
   // Función para obtener la elección del ordenador
   function getComputerPlay() {
@@ -27,23 +29,25 @@ function getRandomNumber(max) {
       return 'Tijeras'; // Si el número es 4, 5 o 6, el ordenador elige 'tijeras'
     }
   }
+ /*let playerPlay;
+ let computerPlay;*/
 
-let jugador = playerPlay
-let ordenador = computerPlay
    // Función para comparar las jugadas y obtener el resultado
  function getResult(playerPlay, computerPlay) {
   if (playerPlay === computerPlay) {
     return 'empate'; // Si las jugadas son iguales, es empate
   } else if (
-    (playerPlay === 'piedra' && computerPlay === 'tijeras') ||
-    (playerPlay === 'papel' && computerPlay === 'piedra') ||
-    (playerPlay === 'tijeras' && computerPlay === 'papel')
+    (playerPlay === 'Piedra' && computerPlay === 'Tijeras') ||
+    (playerPlay === 'Papel' && computerPlay === 'Piedra') ||
+    (playerPlay === 'Tijeras' && computerPlay === 'Papel')
   ) {
     return 'ganar'; // Si la jugada de la jugadora gana a la del ordenador
   } else {
     return 'perder'; // Si la jugada del ordenador gana a la de la jugadora
   }
 }
+
+
 
 // Evento para cuando la jugadora hace clic en el botón
 document.querySelector('.btn-play').addEventListener('click', () => {})
