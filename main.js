@@ -39,11 +39,19 @@ let ordenador = computerPlay
     (playerPlay === 'papel' && computerPlay === 'piedra') ||
     (playerPlay === 'tijeras' && computerPlay === 'papel')
   ) {
-    return 'ganar'; // Si la jugada de la jugadora gana a la de la computadora
+    return 'ganar'; // Si la jugada de la jugadora gana a la del ordenador
   } else {
-    return 'perder'; // Si la jugada de la computadora gana a la de la jugadora
+    return 'perder'; // Si la jugada del ordenador gana a la de la jugadora
   }
 }
+
+// Evento para cuando la jugadora hace clic en el botón
+document.querySelector('.btn-play').addEventListener('click', () => {})
+    const playerPlay = document.querySelector('.js_gameSelect').value;  // La jugada de la jugadora
+    const computerPlay = getComputerPlay();  // La jugada del ordenador
+    const result = getResult(playerPlay, computerPlay);  // Resultado 
+  
+   
  
 
 
