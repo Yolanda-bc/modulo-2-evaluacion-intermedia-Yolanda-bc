@@ -6,16 +6,45 @@ const playButton = document.querySelector('.js_btn-play');
 const resultText = document.querySelector('.js_info');
 const playerScoreEl = document.querySelector('.js_gamer');
 const computerScoreEl = document.querySelector('.js_computer');
+const resultGame = document.querySelector (".js_result")
 
-// Funcion para la jugada
-function roundPlay () {
-    const options =[ "Piedra", "Papel", "Tijeras"];
-    //math.floor redondear el numero decimal
-    // math.random genera nº del 0al1
-    const resultRound = Math.floor (Math.random() * options.length);
-    return options [resultRound];
-    
+
+
+// Función para obtener un número aleatorio entre 1 y max
+function getRandomNumber(max) {
+    return Math.ceil(Math.random() * max);
+  }
+  
+  // Función para obtener la elección del ordenador
+  function getComputerPlay() {
+    const randomNumber = getRandomNumber(9); // da el resultado de un número entre 1 y 9
+  
+    if (randomNumber <= 3) {
+      return 'Piedra';  // Si el número es 1, 2 o 3, el ordenador elige 'piedra'
+    } else if (randomNumber >= 7) {
+      return 'Papel';   // Si el número es 7, 8 o 9, el ordenador elige 'papel'
+    } else {
+      return 'Tijeras'; // Si el número es 4, 5 o 6, el ordenador elige 'tijeras'
+    }
+  }
+
+let jugador = playerPlay
+let ordenador = computerPlay
+   // Función para comparar las jugadas y obtener el resultado
+ function getResult(playerPlay, computerPlay) {
+  if (playerPlay === computerPlay) {
+    return 'empate'; // Si las jugadas son iguales, es empate
+  } else if (
+    (playerPlay === 'piedra' && computerPlay === 'tijeras') ||
+    (playerPlay === 'papel' && computerPlay === 'piedra') ||
+    (playerPlay === 'tijeras' && computerPlay === 'papel')
+  ) {
+    return 'ganar'; // Si la jugada de la jugadora gana a la de la computadora
+  } else {
+    return 'perder'; // Si la jugada de la computadora gana a la de la jugadora
+  }
 }
+ 
 
 
 
