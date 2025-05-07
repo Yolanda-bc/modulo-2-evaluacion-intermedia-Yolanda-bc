@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: solid green;
+   
+    
+   
+}
+.btn-play {
+    background-color: rgb(24, 225, 158);
+    color: white;
+    border-radius: 5px;
+    
+
+}
+.info {
+    background-color: rgb(24, 225, 158);
+    color: white;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    border-radius: 5px;
+}
+.intro,
+.parrafo,
+.form,
+.info,
+.gamer,
+.computer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
